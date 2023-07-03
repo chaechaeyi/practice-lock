@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LockApplication {
+public class LockWithMySQLApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LockApplication.class, args);
+        SpringApplication.run(LockWithMySQLApplication.class, args);
     }
 
 }

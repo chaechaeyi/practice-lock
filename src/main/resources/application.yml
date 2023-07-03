@@ -1,1 +1,14 @@
+debug: false
+management.endpoints.web.exposure.include: "*"
 
+logging:
+  level:
+    com.practice.lock: debug
+    org.springframework.web.servlet: debug
+    org.springframework.jdbc.core: TRACE
+
+spring:
+  datasource:
+    username: root
+    password: ${password}
+    url: jdbc:mysql://${url}?rewriteBatchedStatements=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
