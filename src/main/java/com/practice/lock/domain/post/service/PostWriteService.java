@@ -22,7 +22,10 @@ public class PostWriteService {
         return postRepository.save(post).getId();
     }
 
-
+    /**
+     * 비관적인 락
+     * @param postId
+     */
     @Transactional
     public void likePost(Long postId) {
         var post = postRepository.findById(postId, true).orElseThrow();
@@ -30,6 +33,10 @@ public class PostWriteService {
         postRepository.save(post);
     }
 
+    /**
+     * 낙관적인 락
+     * @param postId
+     */
     public void likePostByOptimisticLock(Long postId) {
         var post = postRepository.findById(postId, false).orElseThrow();
         post.incrementLikeCount();
